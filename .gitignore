@@ -16,3 +16,4 @@
 # (created via www.railsapps.github.io/installrubyonrails-mac.html)
 .ruby-gemset
 .ruby-version
+.idea/*
