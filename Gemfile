@@ -20,6 +20,9 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'guard-rails', require: false
 end
 
 group :test do

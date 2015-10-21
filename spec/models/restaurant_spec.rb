@@ -20,7 +20,7 @@ describe Restaurant, type: :model do
   it 'cant create duplicate restaurants with the same name' do
     Restaurant.create(name: "KFC", rating: 3)
     restaurant = Restaurant.create(name: "KFC", rating: 3)
-    expect{Restaurant.create(name: "KFC", rating: 3)}.to raise_error "Name already exists"
+    expect(restaurant.errors[:name]).to eq ["Name already exists"]
   end
 
 
