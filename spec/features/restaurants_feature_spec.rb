@@ -39,7 +39,7 @@ feature 'restaurants' do
         fill_in 'Name', with: 'kf'
         click_button 'Create Restaurant'
         expect(page).not_to have_css 'h2', text: 'kf'
-        expect(page).to have_content 'error'
+        expect(page).to have_content 'Name is too short'
       end
     end
   end

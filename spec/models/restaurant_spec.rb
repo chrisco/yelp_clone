@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe Restaurant, type: :model do
   it { is_expected.to have_many :reviews }
@@ -15,4 +16,13 @@ describe Restaurant, type: :model do
     expect(restaurant).to have(1).error_on(:name)
     expect(restaurant).not_to be_valid
   end
+
+  it 'cant create duplicate restaurants with the same name' do
+    Restaurant.create(name: "KFC", rating: 3)
+    restaurant = Restaurant.create(name: "KFC", rating: 3)
+    expect{Restaurant.create(name: "KFC", rating: 3)}.to raise_error "Name already exists"
+  end
+
+
 end
+
