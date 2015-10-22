@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+require 'pry'
 
 feature 'user can sign in and out' do
 
@@ -19,9 +19,11 @@ feature 'user can sign in and out' do
     end
   end
 
-  xcontext 'user not signed in and clicks on sign up link' do
+  context 'user not signed in and clicks on sign up link' do
     it 'should see a sign up form' do
-      expect(page).to have_selector
+      click_on('Sign up')
+      # binding.pry
+      expect(page).to have_field('user_password')
     end
 
   end
