@@ -22,9 +22,10 @@ feature 'user can sign in and out' do
   context 'user not signed in and clicks on sign up link' do
     it 'should see a sign up form' do
       click_on('Sign up')
-      # binding.pry
+      #binding.pry
       expect(page).to have_field('user_password')
+      expect(page).to have_field('user_email')
+      
     end
-
   end
 end
