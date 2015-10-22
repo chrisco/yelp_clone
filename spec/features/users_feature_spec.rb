@@ -25,7 +25,26 @@ feature 'user can sign in and out' do
       #binding.pry
       expect(page).to have_field('user_password')
       expect(page).to have_field('user_email')
-      
+
     end
   end
+
+
+  context 'user can sign up' do
+
+    before do
+      click_on('Sign up')
+      fill_in('Email', with: 'bo@cint.com')
+      fill_in('Password', with: 'password')
+      fill_in('Password confirmation', with: 'password')
+      click_button('Sign up')
+    end
+
+    it "it should show a sign out link" do
+      expect(page).to have_link('Sign out')
+    end
+
+  end
+
+
 end
