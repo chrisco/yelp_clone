@@ -20,7 +20,6 @@ feature 'user can sign in and out' do
   end
 
   context 'user not signed in and clicks on sign up link' do
-
     it 'should see a sign up form' do
       click_on('Sign up')
       expect(page).to have_field('user_password')
